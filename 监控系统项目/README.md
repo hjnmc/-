@@ -30,25 +30,6 @@
 - [Dockerfile](F:/监控系统项目/Dockerfile)
 - [docker-compose.yml](F:/监控系统项目/docker-compose.yml)
 
-## 本地启动
-
-如果本机已安装 Node：
-
-```bash
-node server.js
-```
-
-使用当前工作区自带 Node 运行时：
-
-```powershell
-& "C:\Users\96948\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin\node.exe" F:\监控系统项目\server.js
-```
-
-访问地址：
-
-- 监控大屏：[http://127.0.0.1:3030/](http://127.0.0.1:3030/)
-- 后台管理：[http://127.0.0.1:3030/admin](http://127.0.0.1:3030/admin)
-
 ## Docker 部署
 
 ### 方式一：使用 Docker Compose
@@ -111,5 +92,5 @@ node scripts/agent.js --server http://你的监控主机:3030 --token 设备令�
 - 进程清单、服务状态、磁盘分区级监控
 - Redis / PostgreSQL 持久化与多实例部署
 
-### 系统截图
-## 主机管理页面
+## 系统截图
+### 主机管理页面
