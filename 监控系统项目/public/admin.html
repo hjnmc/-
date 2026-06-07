@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>极光运维矩阵后台管理台</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-page="admin" class="theme-admin">
+    <div class="noise-layer"></div>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">设备编排工坊</p>
+        <h1>后台设备编排与管理台</h1>
+      </div>
+      <div class="topbar-actions">
+        <div class="live-pill subtle-pill">
+          <span>注册配置 / 阈值策略 / 采集端接入</span>
+        </div>
+        <a class="ghost-link" href="/">返回监控大屏</a>
+      </div>
+    </header>
+
+    <main class="admin-layout">
+      <section class="panel admin-form-panel">
+        <div class="panel-head">
+          <div>
+            <p class="section-kicker">设备注册</p>
+            <h3 id="formTitle">添加新的监控设备</h3>
+          </div>
+          <p class="muted">后台可维护多台电脑，并为每台设备生成独立安装令牌</p>
+        </div>
+
+        <form id="serverForm" class="server-form">
+          <input type="hidden" id="serverId" />
+          <label>
+            <span>设备名称</span>
+            <input id="name" name="name" placeholder="例如：办公电脑-01" required />
+          </label>
+          <label>
+            <span>主机地址</span>
+            <input id="host" name="host" placeholder="IP / 域名 / 备注地址" required />
+          </label>
+          <label>
+            <span>分组</span>
+            <input id="group" name="group" placeholder="办公区 / 实验室 / 边缘节点" />
+          </label>
+          <label>
+            <span>部署位置</span>
+            <input id="location" name="location" placeholder="上海 / 机房 A / 3 楼" />
+          </label>
+          <label>
+            <span>平台</span>
+            <input id="platform" name="platform" placeholder="Windows 11 / Ubuntu 24.04" />
+          </label>
+          <label class="wide">
+            <span>标签</span>
+            <input id="tags" name="tags" placeholder="图形工作站, 财务, 办公网" />
+          </label>
+          <label class="wide">
+            <span>备注</span>
+            <textarea id="notes" name="notes" rows="3" placeholder="这台设备承担的职责、重点关注项、资产备注"></textarea>
+          </label>
+          <label>
+            <span>处理器阈值</span>
+            <input id="cpuThreshold" name="cpuThreshold" type="number" min="50" max="100" value="85" />
+          </label>
+          <label>
+            <span>内存阈值</span>
+            <input id="memoryThreshold" name="memoryThreshold" type="number" min="50" max="100" value="88" />
+          </label>
+          <label>
+            <span>磁盘阈值</span>
+            <input id="diskThreshold" name="diskThreshold" type="number" min="50" max="100" value="90" />
+          </label>
+          <label class="toggle-row">
+            <span>启用演示模拟</span>
+            <input id="simulationEnabled" name="simulationEnabled" type="checkbox" checked />
+          </label>
+          <div class="form-actions">
+            <button class="primary-btn" type="submit">保存设备</button>
+            <button class="secondary-btn" type="button" id="resetFormBtn">清空表单</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel roster-panel">
+        <div class="panel-head">
+          <div>
+            <p class="section-kicker">设备库</p>
+            <h3>已接入设备</h3>
+          </div>
+          <p class="muted">点击卡片即可编辑、确认告警或触发即时采样</p>
+        </div>
+        <div id="adminServerList" class="admin-server-list"></div>
+      </section>
+
+      <section class="panel install-panel">
+        <div class="panel-head">
+          <div>
+            <p class="section-kicker">采集端接入</p>
+            <h3>安装说明与令牌</h3>
+          </div>
+          <p class="muted">选中设备后会自动生成对应安装命令</p>
+        </div>
+        <div id="installBox" class="install-box"></div>
+      </section>
+
+      <section class="panel journal-panel">
+        <div class="panel-head">
+          <div>
+            <p class="section-kicker">运维日志</p>
+            <h3>操作记录</h3>
+          </div>
+          <p class="muted">新增、采样、命令与告警确认都会沉淀到这里</p>
+        </div>
+        <div id="activityList" class="feed-list compact-feed"></div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

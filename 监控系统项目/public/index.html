@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>极光运维矩阵监控大屏</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-page="dashboard" class="theme-dashboard">
+    <div class="noise-layer"></div>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">极光运维矩阵</p>
+        <h1>多服务器实时监控指挥舱</h1>
+      </div>
+      <div class="topbar-actions">
+        <div class="live-pill">
+          <span class="dot"></span>
+          <span>实时遥测数据流</span>
+        </div>
+        <a class="ghost-link" href="/admin">进入后台管理台</a>
+      </div>
+    </header>
+
+    <main class="dashboard-layout">
+      <section class="panel hero-panel">
+        <div>
+          <p class="section-kicker">全局脉搏</p>
+          <h2>从单机运维切换到整体态势感知</h2>
+          <p class="muted">
+            这个首页不是传统的深色三栏看板，而是更偏“指挥舱”式布局：强调整体健康度、压力来源、动态轨迹和异常事件之间的联动关系。
+          </p>
+        </div>
+        <div id="summaryCards" class="summary-cards"></div>
+      </section>
+
+      <section class="panel trend-panel">
+        <div class="panel-head">
+          <div>
+            <p class="section-kicker">趋势长河</p>
+            <h3>全局资源趋势</h3>
+          </div>
+          <p class="muted" id="generatedAt">--</p>
+        </div>
+        <div id="trendChart" class="chart-box tall-chart"></div>
+      </section>
+
+      <section class="panel fleet-panel">
+        <div class="panel-head">
+          <div>
+            <p class="section-kicker">设备星群</p>
+            <h3>节点状态总览</h3>
+          </div>
+          <p class="muted">按健康度、负载与在线状态排序</p>
+        </div>
+        <div id="fleetGrid" class="fleet-grid"></div>
+      </section>
+
+      <section class="panel ranking-panel">
+        <div class="panel-head">
+          <div>
+            <p class="section-kicker">压力热区</p>
+            <h3>负载热点排名</h3>
+          </div>
+          <p class="muted">处理器与内存的综合压力指数</p>
+        </div>
+        <div id="pressureBars" class="bars-box"></div>
+      </section>
+
+      <section class="panel groups-panel">
+        <div class="panel-head">
+          <div>
+            <p class="section-kicker">分组剖面</p>
+            <h3>业务分组态势</h3>
+          </div>
+          <p class="muted">按部门、机房或业务线查看设备分布</p>
+        </div>
+        <div id="groupCards" class="group-cards"></div>
+      </section>
+
+      <section class="panel alerts-panel">
+        <div class="panel-head">
+          <div>
+            <p class="section-kicker">信号流</p>
+            <h3>事件与告警</h3>
+          </div>
+          <p class="muted">告警、命令与采样动态合并展示</p>
+        </div>
+        <div id="alertFeed" class="feed-list"></div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

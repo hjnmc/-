@@ -1,0 +1,15 @@
+services:
+  aurora-ops:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aurora-ops
+    restart: unless-stopped
+    environment:
+      HOST: 0.0.0.0
+      PORT: 3030
+      TZ: Asia/Shanghai
+    ports:
+      - "3030:3030"
+    volumes:
+      - ./data:/app/data

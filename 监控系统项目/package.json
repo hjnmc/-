@@ -1,0 +1,10 @@
+{
+  "name": "aurora-ops-monitor",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Multi-server real-time monitoring and management system with a modern web command center.",
+  "scripts": {
+    "start": "node server.js",
+    "agent": "node scripts/agent.js"
+  }
+}
