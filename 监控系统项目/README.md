@@ -94,3 +94,4 @@ node scripts/agent.js --server http://你的监控主机:3030 --token 设备令�
 
 ## 系统截图
 ### 主机管理页面
+<img width="2517" height="1303" alt="}OD~FZ06LGO4{J@DGJA1 47" src="https://github.com/user-attachments/assets/80506c08-fe3e-4969-81c2-8deb8e0e61da" />
