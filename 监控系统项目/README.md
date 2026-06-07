@@ -110,3 +110,6 @@ node scripts/agent.js --server http://你的监控主机:3030 --token 设备令�
 - 邮件、企业微信、钉钉、飞书告警通知
 - 进程清单、服务状态、磁盘分区级监控
 - Redis / PostgreSQL 持久化与多实例部署
+
+### 系统截图
+## 主机管理页面
