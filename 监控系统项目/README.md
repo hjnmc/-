@@ -96,6 +96,7 @@ node scripts/agent.js --server http://你的监控主机:3030 --token 设备令�
 ### 监控大屏
 <img width="2516" height="1251" alt="M3@B4LS7~RMI1LALQ)FGOSO" src="https://github.com/user-attachments/assets/48f07503-5069-4693-8ee3-8d8987391516" />
 <img width="2510" height="1244" alt="TWLVEPC% 68MQ @}8MI}D2K" src="https://github.com/user-attachments/assets/e8dad390-2a80-4eee-86fd-7f12ca06e6c3" />
-### 主机管理页面
+
+###  主机管理页面
 <img width="2519" height="1245" alt="KUF9KB4QOVC}~Q8R}`A%{38" src="https://github.com/user-attachments/assets/fda9a741-666c-478d-a317-c01aec70db41" />
 <img width="2522" height="1242" alt="~}FPL$FN26CXD~0K3C VR}L" src="https://github.com/user-attachments/assets/49fa5582-e8c8-4fc1-87ea-254b5b5b391c" />
